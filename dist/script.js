@@ -991,6 +991,18 @@ function () {
 
         _this.slides[_this.slideIndex - 1].classList.add('animated', 'fadeIn');
       });
+
+      try {
+        this.hanson.style.opacity = 0;
+
+        if (n === 3) {
+          setTimeout(function () {
+            _this.hanson.classList.add('animated', 'fadeInUp');
+          }, 3000);
+        } else {
+          this.hanson.classList.remove('animated', 'fadeInUp');
+        }
+      } catch (error) {}
     }
   }, {
     key: "changeIndex",
@@ -1001,6 +1013,10 @@ function () {
     key: "render",
     value: function render() {
       var _this2 = this;
+
+      try {
+        this.hanson = document.querySelector('.hanson');
+      } catch (e) {}
 
       this.btns.forEach(function (btn) {
         btn.addEventListener('click', function () {

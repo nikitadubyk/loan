@@ -21,6 +21,18 @@ export default class Slider {
             this.slides[this.slideIndex - 1].style.display = 'block';
             this.slides[this.slideIndex - 1].classList.add('animated', 'fadeIn');
         });
+
+        try {
+            this.hanson.style.opacity = 0;
+
+            if (n === 3) {
+                setTimeout(() => {
+                    this.hanson.classList.add('animated', 'fadeInUp');
+                }, 3000);
+            } else {
+                this.hanson.classList.remove('animated', 'fadeInUp');
+            }
+        } catch (error) {}
     }
 
     changeIndex(n) {
@@ -28,6 +40,10 @@ export default class Slider {
     }
 
     render() {
+        try {
+            this.hanson = document.querySelector('.hanson');
+        } catch(e) {}
+
         this.btns.forEach(btn => {
             btn.addEventListener('click', () => {
                 this.changeIndex(1);
