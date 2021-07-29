@@ -25,10 +25,7 @@ export default class Differents {
             } else {
                 items[counter].style.display = 'flex';
                 items[counter].classList.add('animated', 'fadeInUp');
-                items[items.length - 1].classList.add('animated', 'fadeOut');
-                setTimeout(() => {
-                    items[items.length - 1].remove();
-                }, 700);
+                items[items.length - 1].remove();
             }
         });
     }
