@@ -2859,7 +2859,10 @@ function () {
         } else {
           items[counter].style.display = 'flex';
           items[counter].classList.add('animated', 'fadeInUp');
-          items[items.length - 1].remove();
+          items[items.length - 1].classList.add('animated', 'fadeOut');
+          setTimeout(function () {
+            items[items.length - 1].remove();
+          }, 700);
         }
       });
     }
