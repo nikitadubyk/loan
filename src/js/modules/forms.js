@@ -30,9 +30,11 @@ export default class Form {
 
                 let statusMessage = document.createElement('div');
 
-                statusMessage.style.fontSize = '18px';
-                statusMessage.style.marginTop = '10px';
-                statusMessage.style.color = '#fff';
+                statusMessage.style.cssText = `
+                    font-size: 18px;
+                    margin-top: 15px;
+                    color: grey;
+                `;
 
                 statusMessage.textContent = this.message.loading;
                 item.appendChild(statusMessage);
@@ -51,6 +53,9 @@ export default class Form {
                     this.inputs.forEach(input => {
                         input.value = '';
                     });
+                    setTimeout(() => {
+                        statusMessage.remove();
+                    }, 5000);
                 });
             });
         });
