@@ -1,3 +1,6 @@
+import CheckMailInputs from './checkMailInputs';
+import PhoneMask from './phoneMask';
+
 export default class Form { 
     constructor() {
         this.forms = document.querySelectorAll('form');
@@ -54,6 +57,8 @@ export default class Form {
     }
 
     init() {
+        new PhoneMask('input[name="phone"]').init();
+        new CheckMailInputs('input[name="email"]').check();
         this.sendForm();
     }
 }
