@@ -2854,9 +2854,11 @@ function () {
       container.querySelector('.plus').addEventListener('click', function () {
         if (counter !== items.length - 2) {
           items[counter].style.display = 'flex';
+          items[counter].classList.add('animated', 'fadeInUp');
           counter++;
         } else {
           items[counter].style.display = 'flex';
+          items[counter].classList.add('animated', 'fadeInUp');
           items[items.length - 1].remove();
         }
       });

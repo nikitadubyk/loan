@@ -20,9 +20,11 @@ export default class Differents {
         container.querySelector('.plus').addEventListener('click', () => {
             if (counter !== items.length - 2) {
                 items[counter].style.display = 'flex';
+                items[counter].classList.add('animated', 'fadeInUp');
                 counter++;
             } else {
                 items[counter].style.display = 'flex';
+                items[counter].classList.add('animated', 'fadeInUp');
                 items[items.length - 1].remove();
             }
         });
