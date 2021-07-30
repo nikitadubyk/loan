@@ -4,7 +4,6 @@ export default class CheckMailInputs {
     }
 
     check() {
-        console.log(this.inputs);
         this.inputs.forEach(input => {
             input.addEventListener('keypress', (e) => {
                 if (e.key.replace(/[^а-яё]/gi, '')) {
