@@ -3,6 +3,8 @@ import MiniSlider from "./modules/slider/slider-mini";
 import VideoPlayer from './modules/playVideo';
 import Differents from './modules/differents';
 import Form from './modules/forms';
+import Accordion from './modules/accordion';
+import Download from './modules/download';
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -49,4 +51,8 @@ window.addEventListener('DOMContentLoaded', () => {
     new Differents('.officerold', '.officernew', '.officer__card-item').init();
 
     new Form().init();
+
+    new Accordion('.plus__content').init();
+
+    new Download('.download').init();
 });
